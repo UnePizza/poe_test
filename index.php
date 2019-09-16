@@ -4,6 +4,7 @@
 <br>
 <table>
 <?php
+echo "test dev" . "<br>";
 $servername = "localhost";
 $username = "root";
 $password = "";
