@@ -4,11 +4,17 @@
 <br>
 <table>
 <?php
-echo "test dev" . "<br>";
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "compte";
+if (isset ($_SERVER['WINDIR'])) {
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "compte";
+}else{
+    $servername = "172.17.0.2"
+        $user= "root"
+    $pwd = ""
+        $dbname="gestionb"
+        }
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
