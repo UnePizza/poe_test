@@ -11,9 +11,9 @@ if (isset ($_SERVER['WINDIR'])) {
     $dbname = "compte";
 }else{
     $servername = "172.17.0.2"
-        $user= "root"
+    $username= "root"
     $pwd = ""
-        $dbname="gestionb"
+    $dbname="gestionb"
         }
 
 // Create connection
