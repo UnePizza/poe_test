@@ -12,7 +12,7 @@ if (isset ($_SERVER['WINDIR'])) {
 }else{
     $servername = "172.17.0.2";
     $username= "root";
-    $pwd = "a";
+    $pwd = "";
     $dbname="gestionb";
         }
 
