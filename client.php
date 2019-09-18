@@ -31,7 +31,7 @@
         while($row = $result->fetch_assoc()) {
             echo "<tr>";
             echo "- id: " . $row["idclient"].  " - Name: " . $row["nom"]. " " . $row["birthdate"]. "<br>";
-            echo "<a href="compte.php?user=". $row["idclient"] .">afficher compte de ' . $row["idclient"] .</a>"."<br>"';
+            echo '<a href="compte.php?user='. $row["idclient"] . '"> afficher le compte du client</a>'."<br>";
 
             echo "</tr>";
         }
