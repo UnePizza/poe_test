@@ -15,25 +15,30 @@
         $password = "a";
         $dbname="gestionb";
     }
+
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-    $sql = "SELECT idcompte, numcompte, solde, idclient FROM compte";
+
+    $sql = "SELECT idclient, nom, birthdate, numcompte FROM client";
     $result = $conn->query($sql);
+
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
             echo "<tr>";
-            echo "- id: " . $row["idcompte"].  " - Numero compte: " . $row["nom"]. "- solde " . $row["birthdate"]. "-ID client " . $row["numcompte"]. "<br>";
+            echo "- id: " . $row["idclient"].  " - Name: " . $row["nom"]. " " . $row["birthdate"]. " " . $row["numcompte"]. "<br>";
+/*            echo "<a href="compte.php?user=". $row["idclient"] .">afficher compte de ' . $row["idclient"] .</a>"."<br>";
+*/
             echo "</tr>";
         }
     } else {
         echo "0 results";
     }
-    echo "<a href= ajoutcompte.php> ajouter un compte </a>"."<br>";
+    echo "<a href= ajoutclient.html> ajouter un client </a>"."<br>";
     $conn->close();
     ?>
 
