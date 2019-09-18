@@ -23,14 +23,14 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT idclient, nom, birthdate, numcompte FROM client";
+    $sql = "SELECT idclient, nom, birthdate FROM client";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
             echo "<tr>";
-            echo "- id: " . $row["idclient"].  " - Name: " . $row["nom"]. " " . $row["birthdate"]. " " . $row["numcompte"]. "<br>";
+            echo "- id: " . $row["idclient"].  " - Name: " . $row["nom"]. " " . $row["birthdate"]. "<br>";
 /*            echo "<a href="compte.php?user=". $row["idclient"] .">afficher compte de ' . $row["idclient"] .</a>"."<br>";
 */
             echo "</tr>";
